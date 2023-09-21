@@ -1,0 +1,1 @@
+C:\dev\Study-Tracker\MainApp\examples\example_glfw_vulkan\Debug\example_glfw_vulkan.exe
