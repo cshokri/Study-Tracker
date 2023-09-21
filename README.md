@@ -1,6 +1,9 @@
 # Study-Tracker
 
+Project to force me to study.
 
-ScreenCapture:https://github.com/WindowsNT/ScreenCapture
-ImGui: https://github.com/ocornut/imgui
-SQLiteCpp: https://github.com/SRombauts/SQLiteCpp
+## Dependency Files Found Here
+
+ScreenCapture: https://github.com/WindowsNT/ScreenCapture  
+ImGui: https://github.com/ocornut/imgui  
+SQLiteCpp: https://github.com/SRombauts/SQLiteCpp  
