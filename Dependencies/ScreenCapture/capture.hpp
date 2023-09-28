@@ -1,3 +1,5 @@
+#pragma once
+
 #include <audiosessiontypes.h>
 #include <audioclient.h>
 #include <mmdeviceapi.h>
@@ -312,7 +314,7 @@ public:
 };
 
 
-HRESULT MFTrs(DWORD, DWORD iid, DWORD ood, CComPtr<IMFTransform> trs, CComPtr<IMFSample> s, IMFSample** sx)
+static HRESULT MFTrs(DWORD, DWORD iid, DWORD ood, CComPtr<IMFTransform> trs, CComPtr<IMFSample> s, IMFSample** sx)
 {
     if (!trs)
         return E_FAIL;
@@ -1158,7 +1160,7 @@ struct VectorStreamX2 : public IMFByteStream
 
 
 
-int DesktopCapture(DESKTOPCAPTUREPARAMS& dp)
+static int DesktopCapture(DESKTOPCAPTUREPARAMS& dp)
 {
     HRESULT hr = S_OK;
     struct AUDIOIN
