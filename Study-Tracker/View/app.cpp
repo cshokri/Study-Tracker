@@ -14,7 +14,7 @@ void app::RenderUI() {
     }
 }
 
-void app::TestUI(EventTracker& tracker) {
+void app::TestUI(EventTracker& tracker, UserData& user_info, ScreenCapture& recorder) {
     bool state = false;
     ImGui::Begin("Close");
     state = ImGui::Button(timer::SecondsToTimer(tracker.GetTestTime()).c_str());
@@ -22,6 +22,7 @@ void app::TestUI(EventTracker& tracker) {
     if (state) {
         //glfwIconifyWindow(window);
         tracker.EndTest();
+        //user_info.
         // could make this return a boolean for success/fail
     }
 }

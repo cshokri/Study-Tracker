@@ -549,7 +549,7 @@ int initView(EventTracker tracker, UserData user_info, ScreenCapture recorder) {
         }
 
         if (tracker.IsTestInProgress()) {
-            app::TestUI(tracker);
+            app::TestUI(tracker, user_info, recorder);
         }
         else {
             app::RenderUI();

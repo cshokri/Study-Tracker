@@ -6,7 +6,7 @@
 
 class DataStorage {
 public:
-    DataStorage();
+    DataStorage(const std::string& default_dir, const std::string& default_time);
     
     void SetStartTime(const std::string& start_time);
     std::string GetStartTime() const;

@@ -11,6 +11,7 @@ const bool EventTracker::IsTestTime()
         return false;
     }
 
+    // can't have >= cause if they early submit it breaks
     if (current_time.tm_hour == m_start_time.tm_hour &&
         current_time.tm_min == m_start_time.tm_min &&
         current_time.tm_sec == m_start_time.tm_sec &&
@@ -35,6 +36,7 @@ const bool EventTracker::IsTestOver() {
         return false;
     }
 
+    // TODO: Maybe should have this as >=
     if (current_time.tm_hour == m_end_time.tm_hour &&
         current_time.tm_min == m_end_time.tm_min &&
         current_time.tm_sec == m_end_time.tm_sec &&
