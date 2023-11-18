@@ -548,11 +548,12 @@ int initView(EventTracker tracker, UserData user_info, ScreenCapture recorder) {
             //glfwShowWindow(window);
         }
 
+        // Either show the test ui or the dashboard ui
         if (tracker.IsTestInProgress()) {
             app::TestUI(tracker, user_info, recorder);
         }
         else {
-            app::RenderUI();
+            app::RenderUI(user_info);
         }
 
 

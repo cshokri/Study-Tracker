@@ -18,7 +18,13 @@ const void UserData::EndPassStreak()
 
 const void UserData::IncrementPassStreak()
 {
-    return void();
+    if (m_storage.SetTodaysPerformance(true)) {
+        m_pass_streak += 1;
+        std::cout << "Set today's performance" << std::endl;
+    }
+    else {
+        std::cout << "Failed to set today's performance" << std::endl;
+    }
 }
 
 const std::string UserData::GetDirLocation() const
@@ -29,4 +35,9 @@ const std::string UserData::GetDirLocation() const
 const std::string UserData::GetStartTime() const
 {
     return m_start_time;
+}
+
+const int UserData::GetPassStreak() const
+{
+    return m_pass_streak;
 }

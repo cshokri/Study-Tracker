@@ -8,11 +8,11 @@ class DataStorage {
 public:
     DataStorage(const std::string& default_dir, const std::string& default_time);
     
-    void SetStartTime(const std::string& start_time);
+    bool SetStartTime(const std::string& start_time);
     std::string GetStartTime() const;
-    void SetVodDirectory(const std::string& dir);
+    bool SetVodDirectory(const std::string& dir);
     std::string GetVodDirectory() const;
-    void SetTodaysPerformance(const bool passed);
+    bool SetTodaysPerformance(const bool passed);
     const int GetPassStreak() const;
     const int GetTotalTestCount() const;
 private:

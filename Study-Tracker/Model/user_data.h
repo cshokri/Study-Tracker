@@ -21,6 +21,7 @@ public:
     const void IncrementPassStreak();
     const std::string GetDirLocation() const;
     const std::string GetStartTime() const;
+    const int GetPassStreak() const;
 private:
     DataStorage m_storage;
     std::string m_start_time;
