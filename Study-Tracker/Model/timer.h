@@ -9,4 +9,5 @@ namespace timer {
     std::string HrMinSecToStr(const int hours, const int minutes, const int seconds);
     std::tm OffsetCurrentTime(const int minutes_offset);
     std::string SecondsToTimer(const int seconds_left);
+    std::string GetCurrentDate();
 }

@@ -540,14 +540,17 @@ int initView(EventTracker& tracker, UserData& user_info, ScreenCapture& recorder
             tracker.StartTest(15);
             //glfwHideWindow(window);
             ShellExecute(0, 0, L"https://app.codesignal.com/pre-screen-practice", 0, 0, SW_SHOW);
+            
             recorder.StartRecording();
         }
         else if (tracker.IsTestOver()) {
             tracker.EndTest();
-            recorder.StopRecording();
+            recorder.StopRecording(timer::GetCurrentDate() + "--" + "Failed");
             //glfwShowWindow(window);
         }
         // TODO: I THINK THE next thing to do is fix up the ui, or maybe think of what else is absolutely necessary before that
+        // TODO: Or what i could do is make the saved captured video increment based off the entries in the db
+        // TODO: need to show pass/fail on the file name so could just name file after finished recording
         // Either show the test ui or the dashboard ui
         if (tracker.IsTestInProgress()) {
             app::TestUI(tracker, user_info, recorder);

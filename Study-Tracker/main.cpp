@@ -14,7 +14,7 @@ int main() {
     // Once showtime is over, the next showtime time will be set on the object and stored on disk
     // so if the program keeps running overnight it will still work and if we close it and reopen it still works
     std::string default_directory = ".//";
-    std::string default_time = "21:04:00";
+    std::string default_time = "14:42:00";
     
     DataStorage data_store = DataStorage(default_directory, default_time); // Interface write/read disk
     UserData user_info = UserData(data_store);  // Uses data store for user actions

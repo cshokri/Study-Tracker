@@ -13,7 +13,7 @@ public:
 
     void SetSaveDirectory(std::string dir);
     void StartRecording();
-    void StopRecording();
+    void StopRecording(std::string video_name);
 private:
     std::string m_save_directory;
     DESKTOPCAPTUREPARAMS m_dp;

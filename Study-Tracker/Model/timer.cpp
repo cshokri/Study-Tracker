@@ -3,8 +3,7 @@
 #include <sstream>
 #include <chrono>
 
-std::tm timer::StrTimeToObj(const std::string &time)
-{
+std::tm timer::StrTimeToObj(const std::string &time) {
     std::tm converted_time{};
     std::istringstream time_stream(time);
 
@@ -20,8 +19,7 @@ std::tm timer::StrTimeToObj(const std::string &time)
     return converted_time;
 }
 
-std::string timer::ObjTimeToStr(const std::tm& time)
-{
+std::string timer::ObjTimeToStr(const std::tm& time) {
     std::string hours_str, minutes_str, seconds_str;
     hours_str = std::to_string(time.tm_hour);
     minutes_str = std::to_string(time.tm_min);
@@ -29,8 +27,7 @@ std::string timer::ObjTimeToStr(const std::tm& time)
     return hours_str + ":" + minutes_str + ":" + seconds_str;
 }
 
-std::string timer::HrMinSecToStr(const int hours, const int minutes, const int seconds)
-{
+std::string timer::HrMinSecToStr(const int hours, const int minutes, const int seconds) {
     std::string hours_str, minutes_str, seconds_str;
     hours_str = std::to_string(hours);
     minutes_str = std::to_string(minutes);
@@ -38,8 +35,7 @@ std::string timer::HrMinSecToStr(const int hours, const int minutes, const int s
     return hours_str + ":" + minutes_str + ":" + seconds_str;
 }
 
-std::tm timer::OffsetCurrentTime(const int minutes_offset)
-{
+std::tm timer::OffsetCurrentTime(const int minutes_offset) {
     std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
 
     std::chrono::minutes minutes(minutes_offset);
@@ -55,10 +51,20 @@ std::tm timer::OffsetCurrentTime(const int minutes_offset)
     return offset_time;
 }
 
-std::string timer::SecondsToTimer(const int seconds_left)
-{
+std::string timer::SecondsToTimer(const int seconds_left) {
     int remaining_hours = seconds_left / 3600;
     int remaining_minutes = (seconds_left % 3600) / 60;
     int remaining_seconds = seconds_left % 60;
     return timer::HrMinSecToStr(remaining_hours, remaining_minutes, remaining_seconds);
+}
+
+std::string timer::GetCurrentDate() {
+    tm local_time;
+    time_t now = time(0);
+    localtime_s(&local_time, &now);
+
+    std::string date = std::to_string(1900 + local_time.tm_year) + "-";
+    date += std::to_string(1 + local_time.tm_mon) + "-";
+    date += std::to_string(local_time.tm_mday);
+    return date;
 }

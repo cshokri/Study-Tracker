@@ -29,7 +29,7 @@ void app::TestUI(EventTracker& tracker, UserData& user_info, ScreenCapture& reco
     if (state) {
         //glfwIconifyWindow(window);
         tracker.EndTest();
-        recorder.StopRecording();
+        recorder.StopRecording(timer::GetCurrentDate() + "--" + "Passed");
         user_info.IncrementPassStreak();
         // could make this return a boolean for success/fail
     }
